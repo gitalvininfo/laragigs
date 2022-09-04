@@ -21,9 +21,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/listings/{id}', function ($id) {
+Route::get('/listings/{listing}', function (Listing $listing) {
     return view('listing', [
-        'listing' => Listing::find($id)
+        'listing' => Listing::find($listing)
     ]);
 });
 
@@ -51,13 +51,13 @@ Route::get('/listings/{id}', function ($id) {
 
 Route::get('/hello', function () {
     return response('Hello Nigga', 200)
-    ->header('Content-Type', 'text/plain');
+        ->header('Content-Type', 'text/plain');
 });
 
 Route::get('posts/{id}', function ($id) {
     return response('Post ' . $id);
 })->where('id', '[0-9]+');
 
-Route::get('search', function(Request $request) {
+Route::get('search', function (Request $request) {
     return ($request->name . ' ' . $request->city);
 });
