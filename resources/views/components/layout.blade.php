@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <h1>Laragigs</h1>
+    {{-- <h1>Laragigs</h1> --}}
 
     <nav class="flex justify-between items-center mb-4">
         <a href="/"><img class="w-24" src="{{ asset('images/logo.png') }}" alt="" class="logo" /></a>
